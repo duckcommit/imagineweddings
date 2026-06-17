@@ -71,7 +71,7 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Email',
-                value: 'hello@imagineweddings.com',
+                value: 'weddingsimagine@gmail.com',
               },
               {
                 icon: (
@@ -80,7 +80,7 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Phone',
-                value: '+91 98765 43210',
+                value: '+91 91127 56626',
               },
               {
                 icon: (
@@ -89,8 +89,8 @@ export default function Contact() {
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
                 ),
-                label: 'Studio',
-                value: 'Mumbai & Pan-India',
+                label: 'Address',
+                value: '394, Mangalwar Peth, Vishnu Chaya Apartment, 411011',
               },
             ].map(item => (
               <div
