@@ -16,6 +16,7 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
+import AboutPage from './pages/AboutPage'
 
 const WA_NUMBER = '919876543210'
 const WA_MSG = encodeURIComponent('Hi Imagine Weddings, I want to plan my wedding.')
@@ -106,6 +107,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <WhatsAppButton />
     </>

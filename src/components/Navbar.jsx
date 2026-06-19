@@ -5,7 +5,7 @@ import logoImg from '../assets/logo.jpeg'
 const NAV_LINKS = [
   { label: 'Services', to: '/services', isRoute: true },
   { label: 'Stories',  href: '#stories'               },
-  { label: 'About',    href: '#about'                 },
+  { label: 'About',    to: '/about', isRoute: true       },
 ]
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
           alt="Imagine Weddings"
           style={{
             height: scrolled ? 52 : 60,
-            width: scrolled ? 90 : 104,
+            width: scrolled ? 52 : 60,
             objectFit: 'cover',
             borderRadius: '50%',
             border: scrolled
@@ -85,6 +85,10 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
+              onClick={link.scroll ? (e) => {
+                e.preventDefault()
+                document.getElementById(link.scroll)?.scrollIntoView({ behavior: 'smooth' })
+              } : undefined}
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.82rem',

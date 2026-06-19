@@ -61,7 +61,7 @@ function FeaturedRow({ item, index }) {
           fontFamily: 'var(--font-heading)',
           fontWeight: 300,
           fontSize: '1.5rem',
-          color: 'rgba(201,168,76,0.35)',
+          color: 'rgba(201,168,76,0.6)',
           lineHeight: 1,
         }}
       >
@@ -96,9 +96,10 @@ function FeaturedRow({ item, index }) {
         <p
           style={{
             fontFamily: 'var(--font-body)',
-            fontSize: '0.98rem',
+            fontSize: '1rem',
             lineHeight: 1.7,
-            color: 'var(--text-muted)',
+            color: 'var(--text-dark)',
+            fontWeight: 400,
             maxWidth: 500,
           }}
         >
@@ -111,7 +112,7 @@ function FeaturedRow({ item, index }) {
         height="20"
         viewBox="0 0 20 20"
         fill="none"
-        style={{ color: 'rgba(201,168,76,0.4)', flexShrink: 0 }}
+        style={{ color: 'rgba(201,168,76,0.7)', flexShrink: 0 }}
       >
         <path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
@@ -159,7 +160,7 @@ export default function FeaturedServices() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.05rem',
                 lineHeight: 1.8,
-                color: 'var(--text-muted)',
+                color: 'var(--text-dark)',
                 marginTop: 18,
                 marginBottom: 40,
               }}
