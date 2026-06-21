@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import logoImg from '../assets/logo.jpeg'
 
 const NAV_LINKS = [
-  { label: 'Services', to: '/services', isRoute: true },
-  { label: 'Stories',  href: '#stories'               },
-  { label: 'About',    to: '/about', isRoute: true       },
+  { label: 'Home',     href: '/'                        },
+  { label: 'Services', to: '/services', isRoute: true   },
+  { label: 'Stories',  href: '#stories'                 },
+  { label: 'About',    to: '/about', isRoute: true      },
 ]
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const linkColor = scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.88)'
+  const linkColor = scrolled ? 'rgb(61, 42, 5)' : 'rgba(255,255,255,0.88)'
 
   return (
     <header
@@ -28,9 +29,9 @@ export default function Navbar() {
         right: 0,
         zIndex: 1000,
         padding: scrolled ? '10px 48px' : '18px 48px',
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto 1fr',
         alignItems: 'center',
-        justifyContent: 'space-between',
         background: scrolled
           ? 'rgba(250,247,242,0.95)'
           : 'linear-gradient(to bottom, rgba(26,18,9,0.42) 0%, transparent 100%)',
@@ -58,8 +59,8 @@ export default function Navbar() {
         />
       </a>
 
-      {/* Desktop Nav */}
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 40 }} aria-label="Main navigation">
+      {/* Desktop Nav — center column */}
+      <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 40 }} aria-label="Main navigation">
         {NAV_LINKS.map(link =>
           link.isRoute ? (
             <Link
@@ -67,9 +68,9 @@ export default function Navbar() {
               to={link.to}
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '0.82rem',
-                fontWeight: 500,
-                letterSpacing: '0.15em',
+                fontSize: '0.88rem',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 color: linkColor,
                 textDecoration: 'none',
@@ -91,9 +92,9 @@ export default function Navbar() {
               } : undefined}
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '0.82rem',
-                fontWeight: 500,
-                letterSpacing: '0.15em',
+                fontSize: '0.88rem',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 color: linkColor,
                 textDecoration: 'none',
@@ -123,6 +124,10 @@ export default function Navbar() {
           }
         `}</style>
 
+      </nav>
+
+      {/* Contact Us — right column */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <a
           href="#contact"
           className="btn-primary"
@@ -130,7 +135,7 @@ export default function Navbar() {
         >
           Contact Us
         </a>
-      </nav>
+      </div>
     </header>
   )
 }

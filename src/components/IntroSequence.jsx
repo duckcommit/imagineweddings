@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const POLAROIDS = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=750&fit=crop&auto=format', rotate: -13, xOffset: -8  },
-  { id: 2, src: 'https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=600&h=750&fit=crop&auto=format', rotate:   8, xOffset:  6  },
-  { id: 3, src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=750&fit=crop&auto=format', rotate:  -3, xOffset: -4  },
-  { id: 4, src: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&h=750&fit=crop&auto=format', rotate:  16, xOffset:  10 },
-  { id: 5, src: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=750&fit=crop&auto=format', rotate:  -7, xOffset: -5  },
+  { id: 1, src: '/gallery/cocktail.webp', rotate: -13, xOffset: -8  },
+  { id: 2, src: '/gallery/g04.jpg',       rotate:   8, xOffset:  6  },
+  { id: 3, src: '/gallery/g16.jpg',       rotate:  -3, xOffset: -4  },
+  { id: 4, src: '/gallery/g20.jpg',       rotate:  16, xOffset:  10 },
+  { id: 5, src: '/gallery/g35.jpg',        rotate:  -7, xOffset: -5  },
 ]
 
 // card: 460 × 620  |  polaroid frame: 280 × 350
@@ -222,6 +222,15 @@ function FrontMotif() {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18 }}>
       <LotusSVG size={100} />
       <GoldRule />
+      <div style={{ textAlign: 'left', lineHeight: 1.1 }}>
+        <div style={{ fontFamily: "'BrittanySignature', cursive", fontSize: '2.6rem', color: 'rgba(201,168,76,0.9)', display: 'block' }}>
+          Imagine
+        </div>
+        <div style={{ fontFamily: "'BrittanySignature', cursive", fontSize: '2.6rem', color: 'rgba(201,168,76,0.9)', display: 'block', paddingLeft: '1.4rem' }}>
+          Weddings
+        </div>
+      </div>
+      <GoldRule />
       <KalashSVG size={46} />
       <GoldRule />
     </div>
@@ -241,12 +250,9 @@ function InsideMotif() {
       </div>
       <p
         style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontStyle: 'italic',
-          fontWeight: 300,
-          fontSize: '1.55rem',
-          color: 'rgba(201,168,76,0.8)',
-          letterSpacing: '0.05em',
+          fontFamily: "'BrittanySignature', cursive",
+          fontSize: '2.4rem',
+          color: 'rgba(201,168,76,0.85)',
           textAlign: 'center',
           lineHeight: 1.2,
         }}

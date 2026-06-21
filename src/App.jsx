@@ -18,7 +18,7 @@ import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
 import AboutPage from './pages/AboutPage'
 
-const WA_NUMBER = '919876543210'
+const WA_NUMBER = '919325204096'
 const WA_MSG = encodeURIComponent('Hi Imagine Weddings, I want to plan my wedding.')
 
 function WhatsAppButton() {

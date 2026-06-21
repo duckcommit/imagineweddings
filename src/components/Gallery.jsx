@@ -2,25 +2,17 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const ROW1 = [
-  '/gallery/g01.jpg', '/gallery/g02.jpg', '/gallery/g03.jpg',
-  '/gallery/g04.jpg', '/gallery/g05.jpg', '/gallery/g06.jpg',
-  '/gallery/g07.jpg', '/gallery/g08.jpg', '/gallery/g09.jpg',
-  '/gallery/g10.jpg', '/gallery/g11.jpg', '/gallery/g12.jpg',
-  '/gallery/g13.jpg', '/gallery/g14.jpg', '/gallery/g15.jpg',
-  '/gallery/g16.jpg', '/gallery/g17.jpg', '/gallery/g18.jpg',
-  '/gallery/g19.jpg', '/gallery/g20.jpg', '/gallery/g21.jpg',
-  '/gallery/g22.jpg', '/gallery/g23.jpg', '/gallery/g24.jpg',
+  '/gallery/g01.jpg', '/gallery/g06.jpg', '/gallery/g11.jpg',
+  '/gallery/g16.jpg', '/gallery/g21.jpg', '/gallery/g26.jpg',
+  '/gallery/g31.jpg', '/gallery/g36.jpg', '/gallery/g41.jpg',
+  '/gallery/g46.jpg',
 ]
 
 const ROW2 = [
-  '/gallery/g25.jpg', '/gallery/g26.jpg', '/gallery/g27.jpg',
-  '/gallery/g28.jpg', '/gallery/g29.jpg', '/gallery/g30.jpg',
-  '/gallery/g31.jpg', '/gallery/g32.jpg', '/gallery/g33.jpg',
-  '/gallery/g34.jpg', '/gallery/g35.jpg', '/gallery/g36.jpg',
-  '/gallery/g37.jpg', '/gallery/g38.jpg', '/gallery/g39.jpg',
-  '/gallery/g40.jpg', '/gallery/g41.jpg', '/gallery/g42.jpg',
-  '/gallery/g43.jpg', '/gallery/g44.jpg', '/gallery/g45.jpg',
-  '/gallery/g46.jpg', '/gallery/g47.jpg', '/gallery/g48.jpg',
+  '/gallery/g03.jpg', '/gallery/g08.jpg', '/gallery/g13.jpg',
+  '/gallery/g18.jpg', '/gallery/g23.jpg', '/gallery/g28.jpg',
+  '/gallery/g33.jpg', '/gallery/g38.jpg', '/gallery/g43.jpg',
+  '/gallery/g48.jpg',
 ]
 
 function MarqueeRow({ images, reverse = false, speed = 40 }) {

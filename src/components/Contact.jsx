@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const ref = useRef(null)
@@ -9,12 +10,31 @@ export default function Contact() {
     name: '', email: '', date: '', message: '',
   })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   const handleSubmit = e => {
     e.preventDefault()
-    setSent(true)
+    setSending(true)
+    setError(null)
+
+    const templateParams = {
+      name: form.name,
+      time: new Date().toLocaleString('en-IN', { dateStyle: 'long', timeStyle: 'short' }),
+      message: `Email: ${form.email}\nWedding Date: ${form.date || 'Not specified'}\n\nMessage:\n${form.message}`,
+    }
+
+    emailjs.send('service_n5em86m', 'template_oaddlxi', templateParams, 'Z6VGZtrDmhfsyQPSE')
+      .then(() => {
+        setSent(true)
+        setSending(false)
+      })
+      .catch(() => {
+        setError('Something went wrong. Please try again or email us directly.')
+        setSending(false)
+      })
   }
 
   return (
@@ -42,15 +62,22 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <span className="section-label">Let's Connect</span>
-            <span className="gold-line" />
-            <h2 className="section-title" style={{ marginBottom: 24 }}>
-              Begin Your<br />
-              <em>Dream Wedding</em>
+            <span className="gold-line" style={{ marginBottom: 32 }} />
+            <h2 style={{
+              fontFamily: "'BrittanySignature', cursive",
+              fontWeight: 400,
+              fontSize: 'clamp(2.8rem, 4vw, 4rem)',
+              lineHeight: 1.2,
+              color: 'var(--text-dark)',
+              marginBottom: 24,
+            }}>
+              Build Your<br />
+              <span style={{ color: 'var(--gold-dark)' }}>Dream Wedding</span>
             </h2>
             <p
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '1.1rem',
+                fontSize: '1.25rem',
                 lineHeight: 1.8,
                 color: 'var(--text-muted)',
                 marginBottom: 44,
@@ -80,7 +107,7 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Phone',
-                value: '+91 91127 56626',
+                value: '+91 93252 04096',
               },
               {
                 icon: (
@@ -127,7 +154,7 @@ export default function Contact() {
                   <div
                     style={{
                       fontFamily: 'var(--font-body)',
-                      fontSize: '1rem',
+                      fontSize: '1.15rem',
                       color: 'var(--text-muted)',
                     }}
                   >
@@ -246,9 +273,14 @@ export default function Contact() {
                   style={{ marginBottom: 32 }}
                 />
 
-                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Send Your Enquiry
+                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', opacity: sending ? 0.7 : 1 }} disabled={sending}>
+                  {sending ? 'Sending…' : 'Send Your Enquiry'}
                 </button>
+                {error && (
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: '#c0392b', marginTop: 12 }}>
+                    {error}
+                  </p>
+                )}
               </form>
             )}
           </motion.div>

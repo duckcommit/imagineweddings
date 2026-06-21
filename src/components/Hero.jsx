@@ -239,7 +239,7 @@ export default function Hero({ visible = true }) {
           <a href="#contact" className="btn-primary">
             Begin Your Journey
           </a>
-          <a href="#stories" className="btn-outline">
+          <a href="#stories" className="btn-outline" style={{ color: 'rgba(255,255,255,0.9)', borderColor: 'rgba(255,255,255,0.6)' }}>
             View Our Work
           </a>
         </motion.div>

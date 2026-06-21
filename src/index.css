@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'BrittanySignature';
+  src: url('/BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --gold: #C9A84C;
   --gold-light: #E8D5A3;
@@ -75,11 +82,12 @@ a { text-decoration: none; color: inherit; }
 
 .section-label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.35em;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-dark);
+  opacity: 1;
 }
 
 .section-title {

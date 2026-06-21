@@ -62,7 +62,7 @@ function ServiceCard({ service, index }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.75, delay: index * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
       style={{
-        padding: '44px 36px',
+        padding: '36px 24px',
         background: 'var(--cream-white)',
         borderTop: '2px solid var(--gold)',
         position: 'relative',
@@ -77,11 +77,13 @@ function ServiceCard({ service, index }) {
       <p
         style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '0.68rem',
-          letterSpacing: '0.3em',
+          fontSize: '0.75rem',
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: 'var(--gold-dark)',
+          color: 'rgb(61, 42, 5)',
+          fontWeight: 700,
           marginBottom: 10,
+          whiteSpace: 'nowrap',
         }}
       >
         {service.subtitle}
@@ -90,10 +92,11 @@ function ServiceCard({ service, index }) {
         style={{
           fontFamily: 'var(--font-heading)',
           fontWeight: 400,
-          fontSize: '1.6rem',
+          fontSize: '1.3rem',
           color: 'var(--text-dark)',
           marginBottom: 16,
           lineHeight: 1.1,
+          whiteSpace: 'nowrap',
         }}
       >
         {service.title}
@@ -134,8 +137,8 @@ export default function Services() {
         >
           <span className="section-label">What We Offer</span>
           <span className="gold-line centered" />
-          <h2 className="section-title">
-            Crafting <em>Unforgettable</em> Days
+          <h2 className="section-title" style={{ fontFamily: "'BrittanySignature', cursive", fontSize: 'clamp(2.8rem, 5vw, 4.4rem)', fontWeight: 400 }}>
+            Crafting <em style={{ fontStyle: 'normal', color: 'var(--gold-dark)' }}>Unforgettable</em> Days
           </h2>
           <p
             style={{
@@ -155,7 +158,7 @@ export default function Services() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 24,
           }}
         >
