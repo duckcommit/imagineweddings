@@ -17,6 +17,10 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
 import AboutPage from './pages/AboutPage'
+import Maintenance from './components/Maintenance'
+
+// Flip to false to bring the site back live
+const MAINTENANCE_MODE = true
 
 const WA_NUMBER = '919325204096'
 const WA_MSG = encodeURIComponent('Hi Imagine Weddings, I want to plan my wedding.')
@@ -102,6 +106,10 @@ function HomePage() {
 }
 
 export default function App() {
+  if (MAINTENANCE_MODE) {
+    return <Maintenance />
+  }
+
   return (
     <>
       <Routes>
