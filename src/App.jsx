@@ -20,7 +20,7 @@ import AboutPage from './pages/AboutPage'
 import Maintenance from './components/Maintenance'
 
 // Flip to false to bring the site back live
-const MAINTENANCE_MODE = true
+const MAINTENANCE_MODE = false
 
 const WA_NUMBER = '919325204096'
 const WA_MSG = encodeURIComponent('Hi Imagine Weddings, I want to plan my wedding.')
