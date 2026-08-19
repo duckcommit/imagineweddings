@@ -107,7 +107,11 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Phone',
-                value: '+91 93252 04096',
+                value: (
+                  <>
+                  +91 9112756626 <br/>
+                  +91 9325204096
+                  </>
               },
               {
                 icon: (
@@ -117,7 +121,7 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Address',
-                value: '394, Mangalwar Peth, Vishnu Chaya Apartment, 411011',
+                value: 'Pune, Maharashtra',
               },
             ].map(item => (
               <div
